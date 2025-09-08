@@ -10,5 +10,8 @@ RSpec.describe AdminoCalculator, type: :model do
     it "If only a single number is given, it returns that number itself." do
       expect(calculator.add("1")).to eq(1)
     end
+    it "If two numbers are provided, separated by a comma, it returns their sum" do
+      expect(calculator.add("1,5")).to eq(6)
+    end
   end
 end
