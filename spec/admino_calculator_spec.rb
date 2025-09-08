@@ -19,5 +19,8 @@ RSpec.describe AdminoCalculator, type: :model do
     it "supports different types of delimiters" do
       expect(calculator.add("//;\n1;5")).to eq(6)
     end
+    it "raises an exception for negative numbers" do
+      expect { calculator.add("1,-2,3") }.to raise_error("Negative numbers not allowed: -2")
+    end
   end
 end
