@@ -16,5 +16,8 @@ RSpec.describe AdminoCalculator, type: :model do
     it "handles new lines between numbers and more than two numbers" do
       expect(calculator.add("1\n2,3,8")).to eq(12)
     end
+    it "supports different types of delimiters" do
+      expect(calculator.add("//;\n1;5")).to eq(6)
+    end
   end
 end
