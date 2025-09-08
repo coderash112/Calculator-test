@@ -11,3 +11,4 @@ calculator = AdminoCalculator.new
 puts calculator.add("")
 puts calculator.add("1")
 puts calculator.add("1,5")
+puts calculator.add("1\n5,3,6")
