@@ -22,5 +22,8 @@ RSpec.describe AdminoCalculator, type: :model do
     it "raises an exception for negative numbers" do
       expect { calculator.add("1,-2,3") }.to raise_error("Negative numbers not allowed: -2")
     end
+    it "raises an exception listing all negative numbers" do
+      expect { calculator.add("1,-2,-3,4") }.to raise_error("Negative numbers not allowed: -2, -3")
+    end
   end
 end

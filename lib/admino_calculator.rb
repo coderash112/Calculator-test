@@ -14,6 +14,7 @@ class AdminoCalculator
 
     negatives = num_list.select { |n| n.to_i < 0 }
     raise "Negative numbers not allowed: #{negatives.join(', ')}" unless negatives.empty?
+    num_list.map(&:to_i).reduce(0, :+)
   end
 end
 
@@ -25,6 +26,11 @@ puts calculator.add("1\n5,3,6")
 puts calculator.add("//;\n1;5")
 begin
   puts calculator.add("1,-2,3")
+rescue => e
+  puts e.message
+end
+begin
+  puts calculator.add("//;\n1;-2;3")
 rescue => e
   puts e.message
 end
